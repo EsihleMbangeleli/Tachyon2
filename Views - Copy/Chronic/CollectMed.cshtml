@@ -1,0 +1,71 @@
+﻿@model Tachyon.Models.Collection
+
+@{
+    ViewData["Title"] = "Collect";
+    Layout = "~/Views/Shared/_Layoutchronic.cshtml";
+
+}
+
+
+
+
+<div class="CollectMed">
+	
+		<div class="container">
+			<!-- main content -->
+			<div class="agile_info">
+				<div class="w3l_form">
+                    <div class="col-lg-4 w3l-features-photo-7_top-right mt-lg-0 mt-4">
+						<img src="/css/poisoning-pill-bottle.jpg" alt="" width="560" />
+					</div>
+				</div>
+				<div class="w3_info">
+					<h2>Collect Form</h2>
+					
+						<form asp action="CollectMed" method="post">
+							<div class="input-group">
+						 <label asp-for="FirstName"></label>
+                        <input asp-for="FirstName" class="form-control" />	
+							</div>
+
+							<div class="input-group">
+						<label asp-for="DateOfBirth"></label>
+                       <input asp-for="DateOfBirth" class="form-control" />
+							</div>
+							<div class="input-group">
+								 <label asp-for="lastName"></label>
+                                <input asp-for="lastName" class="form-control" />
+							</div>
+							<div class="input-group">
+								 <label asp-for="OrderNo"></label>
+                              <input asp-for="OrderNo" class="form-control" />
+							</div> 
+                            <div class="input-group">
+								<label asp-for="MedicationName"></label>
+                        <input asp-for="MedicationName" class="form-control" />
+							</div> 
+                            <div class="input-group">
+								 <label asp-for="Quantity"></label>
+                            <input asp-for="Quantity" class="form-control" />
+							</div> 
+                            <div class="input-group">
+								<label for="dropdown">Collect</label>
+                              <input asp-for="OrderNo" class="form-control" />
+                              </div>
+                               <div class="input-tab">
+                               <select id="dropdown" name="Collected">
+                          <option disabled  selected>Select option</option>
+                           <option value="Collect">Collected</option>
+                          <option value="Not collected">Not Collected</option>
+                          </select>
+							</div> 
+								 <input type="submit" class="btn btn-success" value="create" />               
+						</form>
+					<p class="med">Already Collected?<a asp-action="CollectionIndex" class="btn btn-danger">CollectionList</a></p>
+				</div>
+			</div>
+			
+		</div>
+		
+</div>
+

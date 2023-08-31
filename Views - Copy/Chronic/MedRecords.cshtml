@@ -1,0 +1,57 @@
+﻿@model Tachyon.Models.MedicationRecords
+@{
+    ViewData["Title"] = "Records";
+    Layout = "~/Views/Shared/_Layoutchronic.cshtml";
+
+}
+
+
+
+<div class="CollectMed">
+
+    <div class="container">
+        <!-- main content -->
+        <div class="agile_info">
+            <div class="w3l_form">
+                <div class="col-lg-4 right mt-lg-0 mt-4">
+                    <img src="/css/poisoning-pill-bottle.jpg" alt="" width="560" />
+                </div>
+            </div>
+            <div class="w3_info">
+                <h2>Medication Records </h2>
+
+                <form asp action="MedRecords" method="post">
+                    <div class="input-group">
+                        <label asp-for="ExpiryDate"></label>
+                        <input asp-for="ExpiryDate" class="form-control" />
+                    </div>
+
+                    <div class="input-group">
+                        <label asp-for="NameOfMedication"></label>
+                        <input asp-for="NameOfMedication" class="form-control" />
+                    </div>
+                    <div class="input-group">
+                        <label asp-for="OrderedDate"></label>
+                        <input asp-for="OrderedDate" class="form-control" />
+                    </div>
+                    <div class="input-group">
+                        <label asp-for="Description"></label>
+                        <input asp-for="Description" class="form-control" />
+                    </div>
+                    <div class="input-group">
+                        <label asp-for="Purpose"></label>
+                        <input asp-for="Purpose" class="form-control" />
+                    </div>
+                    
+
+
+                    <input type="submit" class="btn btn-success" value="create" />
+                </form>
+                <a asp-action="MendicationIndex" class="btn btn-danger">RecordsList</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
