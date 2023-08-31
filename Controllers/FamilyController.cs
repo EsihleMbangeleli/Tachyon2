@@ -24,6 +24,10 @@ namespace Tachyon.Controllers
         {
             return View();
         }
+        public IActionResult viewReport()
+        {
+            return View();
+        }
         public IActionResult Dash()
         {
             return View();

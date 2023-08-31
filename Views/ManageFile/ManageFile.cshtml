@@ -52,7 +52,13 @@
             </div>
             <span asp-validation-for="DateOFBirth" class=" text-danger"></span>
             <div class=" form-group">
-                <label asp-for="Race"></label>
+                <select id="DescriptionDropdown" asp-for="Race" class=" form-control" id="validationName" required>
+                    <option value="Black">Black</option>
+                    <option value="Coloured">Coloured</option>
+                    <option value="White">White</option>
+                  
+
+                </select>
                 <div col-sm-10>
                     <input asp-for="Race" class=" form-control" id="validationWeakness" required />
                 </div>

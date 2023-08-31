@@ -212,6 +212,12 @@
 									<p>Feedback</p>
 								</a>
 							</li>
+							<li class="nav-item">
+								<a asp-controller="Family" asp-action="viewReport">
+									<i class="la la-fonticons"></i>
+									<p>Report</p>
+								</a>
+							</li>
 						}
 						if (User.IsInRole("Doctor"))
 						{
@@ -305,6 +311,12 @@
 								<a asp-controller="Family" asp-action="CreateFeedBack">
 									<i class="la la-fonticons"></i>
 									<p>Feedback</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a asp-controller="Family" asp-action="viewReport">
+									<i class="la la-fonticons"></i>
+									<p>Report</p>
 								</a>
 							</li>
 						}
