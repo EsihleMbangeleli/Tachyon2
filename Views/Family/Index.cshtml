@@ -1,11 +1,4 @@
-﻿@using Microsoft.AspNetCore.Identity
-@using Tachyon.Models
-@using Tachyon.Areas.Identity.Data
-
-@inject SignInManager<TachyonUser> SignInManager
-@inject UserManager<TachyonUser> UserManager
-
-@{
+﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/LayoutFamily.cshtml";
 }
@@ -13,112 +6,9 @@
   <h1>Family Planning</h1>
     <p>Family planning allows people to attain their desired number of children, if any, and to determine the spacing of their pregnancies. It is achieved through use of contraceptive methods and the treatment of infertility.</p>
 </div>
-	<br/>				
-<div class="container-fluid">
-	@*<h3 class="page-title">Welcome to <span class="text-primary">E-</span><span class="text-success">NOMPILO</span></h3>*@
-	<div class="row d-flex w-100">
-		<div class="col-md-2">
-			<div class="card card-stats card-warning">
-				<div class="card-body ">
-					<div class="row">
-						<div class="col-5">
-							<div class="icon-big text-center">
-								<i class="la la-users"></i>
-							</div>
-						</div>
-						<div class="col-7 d-flex align-items-center">
-							<div class="numbers">
-								<p class="card-category">Appointment</p>
-
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-2">
-			<div class="card card-stats card-success">
-				<div class="card-body ">
-					<div class="row">
-						<div class="col-5">
-							<div class="icon-big text-center">
-								<i class="la la-bar-chart"></i>
-							</div>
-						</div>
-						<div class="col-7 d-flex align-items-center">
-							<div class="numbers">
-								<p class="card-category">Screening</p>
-
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-2">
-			<div class="card card-stats card-danger">
-				<div class="card-body">
-					<div class="row">
-						<div class="col-5">
-							<div class="icon-big text-center">
-								<i class="la la-newspaper-o"></i>
-							</div>
-						</div>
-						<div class="col-7 d-flex align-items-center">
-							<div class="numbers">
-								<p class="card-category">Track-menstruation</p>
-
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-2">
-			<div class="card card-stats card-primary">
-				<div class="card-body ">
-					<div class="row">
-						<div class="col-5">
-							<div class="icon-big text-center">
-								<i class="la la-check-circle"></i>
-							</div>
-						</div>
-						<div class="col-7 d-flex align-items-center">
-							<div class="numbers">
-								<p class="card-category">Feedback</p>
-
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-2">
-			<div class="card card-stats card-warning">
-				<div class="card-body ">
-					<div class="row">
-						<div class="col-5">
-							<div class="icon-big text-center">
-								<i class="la la-check-circle"></i>
-							</div>
-						</div>
-						<div class="col-7 d-flex align-items-center">
-							<div class="numbers">
-								<p class="card-category">prescription</p>
-
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-
 <div class="row row-cols-1 row-cols-md-2 g-2">
     <div class="col">
-<div class="card mb-3" style="max-width: 800px;">
+<div class="card mb-3" style="max-width: 540px;">
     <div class="row g-0">
         <div class="col-md-4">
             <img src="~/css/FamilyPlanning.jfif" class="img-fluid rounded-start" alt="...">
@@ -141,7 +31,7 @@
 </div>
     </div>
     <div class="col">
-        <div class="card mb-3" style="max-width: 800px;">
+        <div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">
                 <div class="col-md-4">
                     <img src="~/css/FamilyPlanning2.png" class="img-fluid rounded-start" alt="...">

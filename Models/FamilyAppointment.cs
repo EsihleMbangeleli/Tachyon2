@@ -23,7 +23,8 @@ namespace Tachyon.Models
         [Required]
         public DateTime AppointmentDate { get; set; }
 
-      
+        [Required]
+        public TimeSpan?  Time { get; set; }
 
     }
 }
