@@ -19,6 +19,17 @@ namespace Tachyon.Models
         public DateTime  DateOFBirth { get; set; }
         [Required]
         public string? Race { get; set; }
-
+        [Required]
+        public string? Email { get; set; }
+        [Required]
+        public string? address { get; set; }
+        [Required]
+        public string? address2 { get; set; }
+        [Required]
+        public string? City { get; set; }
+        [Required]
+        public string? province { get; set; }
+        [Required]
+        public int? zip { get; set; }
     }
 }

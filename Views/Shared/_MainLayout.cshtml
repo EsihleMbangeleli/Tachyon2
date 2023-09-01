@@ -112,11 +112,11 @@
 							</ul>
 						</li>
 						<li class="nav-item dropdown">
-							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="assets/img/profile.jpg" alt="user-img" width="36" class="img-circle"><span>@UserManager.GetUserAsync(User).Result.FirstName</span> </a>
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <span>@UserManager.GetUserAsync(User).Result.FirstName</span> </a>
 							<ul class="dropdown-menu dropdown-user">
 								<li>
 									<div class="user-box">
-										<div class="u-img"><img src="assets/img/profile.jpg" alt="user"></div>
+										
 										<div class="u-text">
 											<h4></h4>
 											<p class="text-muted">@UserManager.GetUserAsync(User).Result.FirstName @UserManager.GetUserAsync(User).Result.LastName</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
@@ -134,9 +134,7 @@
 			<div class="sidebar">
 				<div class="scrollbar-inner sidebar-wrapper">
 					<div class="user">
-						<div class="photo">
-							<img src="assets/img/profile.jpg">
-						</div>
+						
 						<div class="info">
 							<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
@@ -179,7 +177,7 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a asp-controller="Bookings" asp-action="Bookings">
+							<a asp-controller="walkin" asp-action="Index">
 							<i class="la la-table"></i>
 								<p>Walk-in</p>
 								@*<span class="badge badge-count">50</span>*@
@@ -207,9 +205,11 @@
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="icons.html">
+						<a asp-controller="Vaccine" asp-action="Screening">
+							
 								<i class="la la-fonticons"></i>
 								<p>Vaccination</p>
+								@*<span class="badge badge-danger">25</span>*@
 							</a>
 						</li>
 						

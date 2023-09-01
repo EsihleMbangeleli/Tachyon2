@@ -24,6 +24,10 @@ namespace Tachyon.Controllers
         {
             return View();
         }
+        public IActionResult viewReport()
+        {
+            return View();
+        }
         public IActionResult Dash()
         {
             return View();
@@ -40,6 +44,7 @@ namespace Tachyon.Controllers
         {
             return View();
         }
+       
         public IActionResult PreventationTypeList()
         {
             return View();
@@ -263,7 +268,7 @@ namespace Tachyon.Controllers
             {
                 _Context.familyScrenning.Add(familyScrenning);
                 _Context.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("ScreeningList");
             }
             return View(familyScrenning);
 
