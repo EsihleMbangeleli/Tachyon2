@@ -51,29 +51,29 @@ namespace Tachyon.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "59f04f4a-a20b-4ec3-a57f-339798c470d6",
-                            ConcurrencyStamp = "43d9fae3-27a4-4f75-a7a3-5d21fefc3583",
+                            Id = "6b277ff6-63c2-4bf5-8b01-156bbd9bc08a",
+                            ConcurrencyStamp = "429f7dc5-0ec7-46e4-9ff1-051c941779f8",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "3bd5b05a-8ead-4d66-b1b0-8a0e76930008",
-                            ConcurrencyStamp = "99386f01-761b-4bae-a2b8-7fdd114b44df",
+                            Id = "07d9edd8-b5b2-4973-b43f-7f7adefdc4c5",
+                            ConcurrencyStamp = "458d2933-3bcb-430e-978b-04192fc48540",
                             Name = "Doctor",
                             NormalizedName = "Doctor"
                         },
                         new
                         {
-                            Id = "f34f57dc-bd7f-4dd8-91eb-81d641a05e2b",
-                            ConcurrencyStamp = "9b022a77-6019-4e5d-91d5-35d0a240ed0a",
+                            Id = "1a536232-9767-4d99-abbe-a36fbedfa485",
+                            ConcurrencyStamp = "7bda52bf-5a13-4518-bcb8-3211eed7c543",
                             Name = "Patient",
                             NormalizedName = "PATIENT"
                         },
                         new
                         {
-                            Id = "9c2c69b3-bd17-4e24-b685-6f86aad7cb37",
-                            ConcurrencyStamp = "80df6f36-6136-4aee-ab1e-e97f4073b748",
+                            Id = "09c76ba4-968b-4b61-9b61-a12ef236e521",
+                            ConcurrencyStamp = "edff9f5a-36fb-4688-9db1-6b02a0115550",
                             Name = "Nurse",
                             NormalizedName = "NURSE"
                         });
@@ -262,6 +262,48 @@ namespace Tachyon.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("Tachyon.Models.Appointment", b =>
+                {
+                    b.Property<int>("AppointmentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AppointmentId"), 1L, 1);
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IDNumber")
+                        .IsRequired()
+                        .HasMaxLength(13)
+                        .HasColumnType("nvarchar(13)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("AppointmentId");
+
+                    b.ToTable("appointments");
+                });
+
             modelBuilder.Entity("Tachyon.Models.Booking", b =>
                 {
                     b.Property<int>("id")
@@ -270,24 +312,66 @@ namespace Tachyon.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
-                    b.Property<DateTime?>("datetimevalue")
+                    b.Property<string>("Department")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("datetimevalue")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("email")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("lastname")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("subsystem")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");
 
                     b.ToTable("Booking");
+                });
+
+            modelBuilder.Entity("Tachyon.Models.Collection", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+
+                    b.Property<string>("Collected")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MedicationName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("OrderNo")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("lastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("collection");
                 });
 
             modelBuilder.Entity("Tachyon.Models.FamilyAppointment", b =>
@@ -311,10 +395,6 @@ namespace Tachyon.Migrations
                     b.Property<string>("NurseName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<TimeSpan?>("Time")
-                        .IsRequired()
-                        .HasColumnType("time");
 
                     b.HasKey("AppointmentID");
 
@@ -468,6 +548,71 @@ namespace Tachyon.Migrations
                     b.ToTable("familyScrenning");
                 });
 
+            modelBuilder.Entity("Tachyon.Models.Feedback", b =>
+                {
+                    b.Property<int>("FeedbackId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FeedbackId"), 1L, 1);
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("FeedbackId");
+
+                    b.ToTable("feedbacks");
+                });
+
+            modelBuilder.Entity("Tachyon.Models.FillingPrescription", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+
+                    b.Property<string>("Allergies")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DietToFollow")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Dosage")
+                        .HasColumnType("int");
+
+                    b.Property<string>("DrugsName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PatientName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Unit")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Weight")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("fillingPrescriptions");
+                });
+
             modelBuilder.Entity("Tachyon.Models.ManageFile", b =>
                 {
                     b.Property<int>("ManageFileID")
@@ -476,8 +621,16 @@ namespace Tachyon.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ManageFileID"), 1L, 1);
 
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("DateOFBirth")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Gender")
                         .HasColumnType("nvarchar(max)");
@@ -494,9 +647,56 @@ namespace Tachyon.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("address2")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("province")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("zip")
+                        .IsRequired()
+                        .HasColumnType("int");
+
                     b.HasKey("ManageFileID");
 
                     b.ToTable("manageFiles");
+                });
+
+            modelBuilder.Entity("Tachyon.Models.MedicationRecords", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ExpiryDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("NameOfMedication")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("OrderedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Purpose")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("medicationRecords");
                 });
 
             modelBuilder.Entity("Tachyon.Models.TrackMenstruation", b =>
