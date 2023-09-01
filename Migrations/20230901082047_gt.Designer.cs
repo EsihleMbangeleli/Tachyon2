@@ -12,8 +12,8 @@ using Tachyon.Areas.Identity.Data;
 namespace Tachyon.Migrations
 {
     [DbContext(typeof(TachyonDbContext))]
-    [Migration("20230831115730_yt")]
-    partial class yt
+    [Migration("20230901082047_gt")]
+    partial class gt
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -53,29 +53,29 @@ namespace Tachyon.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "c06218fe-ad35-4592-beef-010c3e0cf989",
-                            ConcurrencyStamp = "a81d1793-e796-4430-9fa5-b1312b444b89",
+                            Id = "baad8d86-4834-49e8-aac9-b6e930c82493",
+                            ConcurrencyStamp = "2138e553-83d3-42c2-9af3-54f7477e3ebb",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "0b3156b4-d431-4a8e-95ac-2db893b55532",
-                            ConcurrencyStamp = "065b465d-b00a-418e-b395-e15bb61df603",
+                            Id = "a9f46be5-7e50-4e75-afca-0575c6afafd3",
+                            ConcurrencyStamp = "0a00f962-b80f-40c3-9037-5eedab058e3d",
                             Name = "Doctor",
                             NormalizedName = "Doctor"
                         },
                         new
                         {
-                            Id = "5c6450d8-c1e8-4586-ba7b-41ae8913b881",
-                            ConcurrencyStamp = "14a6210c-8554-4140-bc1e-83278ec6d397",
+                            Id = "bbb66160-81d5-4e84-92e3-1a6f7f219cdb",
+                            ConcurrencyStamp = "2d86842d-2182-406f-8e07-15ec957d0a76",
                             Name = "Patient",
                             NormalizedName = "PATIENT"
                         },
                         new
                         {
-                            Id = "1abe52f5-ea8a-49bf-8524-90a933eb4226",
-                            ConcurrencyStamp = "260ed10d-ba7a-455c-811d-fa8fcd87c2cf",
+                            Id = "4f389ef0-9762-44b3-bd29-9934b4c44e85",
+                            ConcurrencyStamp = "300d7383-59b8-4d0b-9a1f-ea4af37584e6",
                             Name = "Nurse",
                             NormalizedName = "NURSE"
                         });
