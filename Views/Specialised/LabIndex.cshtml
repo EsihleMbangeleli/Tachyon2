@@ -1,0 +1,106 @@
+﻿@model IEnumerable<Tachyon.Models.LabTest>
+
+@{
+    ViewData["Title"] = "LabIndex";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+}
+
+<h1>LabIndex</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.patientID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.lastname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dob)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.physician)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.testName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.results)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.interpretation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.recommendations)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.patientID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lastname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dob)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.physician)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.testName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.results)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.interpretation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.recommendations)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<link href="~/css/style - copy.css" rel="stylesheet" />
+<link href="~/css/style.css" rel="stylesheet" />
+<link href="~/css/table.css" rel="stylesheet" />
