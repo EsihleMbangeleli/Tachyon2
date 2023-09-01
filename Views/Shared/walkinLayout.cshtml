@@ -4,22 +4,29 @@
 
 @inject SignInManager<TachyonUser> SignInManager
 @inject UserManager<TachyonUser> UserManager
-
 <!DOCTYPE html>
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
-    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
-    <link rel="stylesheet" href="~/assets/css/ready.css">
-    <link rel="stylesheet" href="~/assets/css/demo.css">
+	<meta name="viewport" content="width=device-width" />
+	<title>@ViewBag.Title</title>
+	<link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+	<link rel="stylesheet" href="~/assets/css/ready.css">
+	<link rel="stylesheet" href="~/assets/css/demo.css">
 	<!-- fevicon -->
 	<link rel="icon" href="~/Logo/favicon.ico" type="image/x-icon" />
+	<style>
+		#main {
+			background-image: url('css/walkinwall.jpg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			/* 	background-color: red; */
+		}
+	</style>
 </head>
 <body>
-    	<div class="wrapper">
+	<div class="wrapper">
 		<div class="main-header">
 			<div class="logo-header">
 				<a href="index.html" class="logo">
@@ -32,7 +39,7 @@
 			</div>
 			<nav class="navbar navbar-header navbar-expand-lg">
 				<div class="container-fluid">
-					
+
 					<form class="navbar-left navbar-form nav-search mr-md-3" action="">
 						<div class="input-group">
 							<input type="text" placeholder="Search ..." class="form-control">
@@ -72,7 +79,7 @@
 												<span class="block">
 													New user registered
 												</span>
-												<span class="time">5 minutes ago</span> 
+												<span class="time">5 minutes ago</span>
 											</div>
 										</a>
 										<a href="#">
@@ -81,18 +88,18 @@
 												<span class="block">
 													Rahmad commented on Admin
 												</span>
-												<span class="time">12 minutes ago</span> 
+												<span class="time">12 minutes ago</span>
 											</div>
 										</a>
 										<a href="#">
-											<div class="notif-img"> 
+											@*<div class="notif-img">
 												<img src="assets/img/profile2.jpg" alt="Img Profile">
-											</div>
+											</div>*@
 											<div class="notif-content">
 												<span class="block">
 													Reza send messages to you
 												</span>
-												<span class="time">12 minutes ago</span> 
+												<span class="time">12 minutes ago</span>
 											</div>
 										</a>
 										<a href="#">
@@ -101,7 +108,7 @@
 												<span class="block">
 													Farrah liked Admin
 												</span>
-												<span class="time">17 minutes ago</span> 
+												<span class="time">17 minutes ago</span>
 											</div>
 										</a>
 									</div>
@@ -112,117 +119,117 @@
 							</ul>
 						</li>
 						<li class="nav-item dropdown">
-							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <span>@UserManager.GetUserAsync(User).Result.FirstName</span> </a>
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> @*<img src="assets/img/profile.jpg" alt="user-img" width="36" class="img-circle">*@<span></span>@UserManager.GetUserAsync(User).Result.FirstName<span></span> </a>
 							<ul class="dropdown-menu dropdown-user">
 								<li>
 									<div class="user-box">
-										
+										@*<div class="u-img"><img src="assets/img/profile.jpg" alt="user"></div>*@
 										<div class="u-text">
-											<h4></h4>
-											<p class="text-muted">@UserManager.GetUserAsync(User).Result.FirstName @UserManager.GetUserAsync(User).Result.LastName</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
+											<h4>@UserManager.GetUserAsync(User).Result.FirstName</h4>
+											<p class="text-muted">@UserManager.GetUserAsync(User).Result.FirstName</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
 										</div>
-										</div>
-									</li>
-									
-								</ul>
-								<!-- /.dropdown-user -->
-							</li>
-						</ul>
-					</div>
-				</nav>
-			</div>
-			<div class="sidebar">
-				<div class="scrollbar-inner sidebar-wrapper">
-					<div class="user">
-						
-						<div class="info">
-							<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
-								<span>
-
-								<span class="user-level">@UserManager.GetUserAsync(User).Result.FirstName</span>
-									<span class="caret"></span>
-								</span>
-							</a>
-							<div class="clearfix"></div>
-
-							<div class="collapse in" id="collapseExample" aria-expanded="true" style="">
-								<ul class="nav">
-									<li>
-										<a href="#profile">
-											<span class="link-collapse">My Profile</span>
-										</a>
-									</li>
-								<li>
-									<form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-										<button id="logout" type="submit" class="nav-link btn btn-link text-dark">Logout</button>
-									</form>
+									</div>
 								</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<ul class="nav">
-						<li class="nav-item active">
-							<a >
-								<i class="la la-dashboard"></i>
-								<p>Dashboard</p>
-								<span class="badge badge-count">5</span>
-							</a>
+
+								@*<a class="dropdown-item" href="#"><i class="ti-user"></i> My Profile</a>
+								<a class="dropdown-item" href="#"></i> My Balance</a>
+								<a class="dropdown-item" href="#"><i class="ti-email"></i> Inbox</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#"><i class="ti-settings"></i> Account Setting</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Logout</a>*@
+							</ul>
+							<!-- /.dropdown-user -->
 						</li>
-						<li class="nav-item">
-							<a asp-controller="ManageFile" asp-action="ManageFile">
-								<i class="la la-table"></i>
-								<p>Manage File</p>
-								<@*span class="badge badge-count">14</span>*@
-							</a>
-						</li>
-						<li class="nav-item">
-							<a asp-controller="walkin" asp-action="Index">
-							<i class="la la-table"></i>
-								<p>Walk-in</p>
-								@*<span class="badge badge-count">50</span>*@
-							</a>
-						</li>
-						<li class="nav-item">
-							<a asp-controller="Family" asp-action="Index">
-								<i class="la la-th"></i>
-								<p>Family Planning</p>
-								@*<span class="badge badge-count">6</span>*@
-							</a>
-						</li>
-						<li class="nav-item">
-						<a asp-controller="Chronic" asp-action="Chronic_MedicationIndex">
-								<i class="la la-bell"></i>
-								<p>Chronic medication</p>
-								@*<span class="badge badge-success">3</span>*@
-							</a>
-						</li>
-						<li class="nav-item">
-							<a href="typography.html">
-								<i class="la la-font"></i>
-							<p>Specialised medical procedures</p>
-								@*<span class="badge badge-danger">25</span>*@
-							</a>
-						</li>
-						<li class="nav-item">
-							<a href="icons.html">
-								<i class="la la-fonticons"></i>
-								<p>Vaccination</p>
-							</a>
-						</li>
-						
 					</ul>
 				</div>
-			</div>
-			<div class="main-panel">
-				<div class="content">
-				
-					@RenderBody()
+			</nav>
+		</div>
+		<div class="sidebar">
+			<div class="scrollbar-inner sidebar-wrapper">
+				<div class="user">
+					<div class="photo">
+					</div>
+					<div class="info">
+						<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+							<span>
+								@UserManager.GetUserAsync(User).Result.FirstName
+					
+								<span class="caret"></span>
+							</span>
+						</a>
+						<div class="clearfix"></div>
+
+						<div class="collapse in" id="collapseExample" aria-expanded="true" style="">
+							<ul class="nav">
+								<li>
+									<a href="#profile">
+										<span class="link-collapse">My Profile</span>
+									</a>
+								</li>
+								<li>
+									<a href="#edit">
+										<span class="link-collapse">Edit Profile</span>
+									</a>
+								</li>
+								<li>
+									<a href="#settings">
+										<span class="link-collapse">Settings</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
 				</div>
-				
+				<ul class="nav">
+					<li class="nav-item active">
+						<a>
+							<i class="la la-dashboard"></i>
+							<p>Dashboard</p>
+							<span class="badge badge-count">5</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a asp-controller="ManageFile" asp-action="ManageFile">
+							<i class="la la-table"></i>
+							<p>Manage File</p>
+							<span class="badge badge-count">14</span>
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a asp-controller="walkin" asp-action="Booking">
+							<i class="la la-th"></i>
+							<p>Booking</p>
+							@*<span class="badge badge-count">6</span>*@
+						</a>
+					</li>
+					<li class="nav-item">
+						<a asp-controller="walkin" asp-action="Screening">
+							<i class="la la-bell"></i>
+							<p>Screening</p>
+							<span class="badge badge-success">3</span>
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a asp-controller="walkin" asp-action="Doctors">
+							<i class="la la-fonticons"></i>
+							<p>List of Available Doctors</p>
+						</a>
+					</li>
+
+				</ul>
 			</div>
 		</div>
-	
+		<div class="main-panel">
+			<div class="content" id="main">
+				@RenderBody()
+			</div>
+
+		</div>
+	</div>
+
 
 
 </body>
