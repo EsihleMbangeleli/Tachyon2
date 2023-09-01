@@ -2,6 +2,8 @@
 
 @{
     ViewData["Title"] = "LabCreate";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
 }
 
 <h1>LabCreate</h1>
@@ -83,6 +85,5 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+<link href="~/css/style - copy.css" rel="stylesheet" />
+<link href="~/css/style.css" rel="stylesheet" />

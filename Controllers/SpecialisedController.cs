@@ -8,6 +8,7 @@ using System.Reflection.Metadata.Ecma335;
 using Tachyon.Areas.Identity.Data;
 using Tachyon.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Tachyon.Controllers
 {
@@ -19,6 +20,7 @@ namespace Tachyon.Controllers
 			_context = context;
 		}
 		// GET: SpecialisedController
+		[Authorize]
 		public ActionResult Index()
 		{
 			return View();
@@ -544,11 +546,11 @@ namespace Tachyon.Controllers
 			return (_context.Procedure?.Any(e => e.id == id)).GetValueOrDefault();
 		}
 
-		public ActionResult Deatals(int Id)
-		{
-			Procedure procedure = _context.Procedure.Find(Id);
-			return View(procedure);
-		}
+		//public ActionResult Details(int Id)
+		//{
+		//	Procedure procedure = _context.Procedure.Find(Id);
+		//	return View(procedure);
+		//}
 
 		public async Task<ActionResult> Details1Async(int? id)
 		{
@@ -569,7 +571,13 @@ namespace Tachyon.Controllers
 
 
 
-		///Progess
+		///Progess <summary>
+		/// Progess
+		/// 
+		/// 
+		/// 
+		/// </summary>
+		/// <returns></returns>
 		// GET: Progresses
 		public async Task<IActionResult> ProgressIndex()
 		{
@@ -714,7 +722,13 @@ namespace Tachyon.Controllers
 
 
 
-		///Treatment
+		///Treatment <summary>
+		/// Treatment
+		/// 
+		/// 
+		/// 
+		/// </summary>
+		/// <returns></returns>
 		// GET: Treatments
 		public async Task<IActionResult> TreatmentIndex()
 		{

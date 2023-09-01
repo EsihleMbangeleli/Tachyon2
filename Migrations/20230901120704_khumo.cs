@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Tachyon.Migrations
 {
-    public partial class KhumoDb : Migration
+    public partial class khumo : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -536,10 +536,10 @@ namespace Tachyon.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "1efaa553-72c7-40a9-b0f1-364590c9d62e", "75f2b807-5e04-4ae7-ad79-d7c9983336fb", "Admin", "ADMIN" },
-                    { "8c725617-c3a4-4e04-ae51-f15da1cecddd", "599fe4d7-ba5f-423c-a3c8-cb987e04fe9f", "Patient", "PATIENT" },
-                    { "a261de1f-554c-4454-8930-b124ef70c3a0", "a66f13e4-3ca7-4f4e-bcf3-8e9c7761aeb2", "Doctor", "Doctor" },
-                    { "b8f941ee-d8f8-40d8-ab2d-ecd55ccc80fd", "fe754fa2-3851-41b2-a3f9-e5eb31aca680", "Nurse", "NURSE" }
+                    { "2ff9ba90-dde3-45fe-a44a-5753687d58c4", "fe8eda16-7958-405c-823d-1fc5a98ef75b", "Nurse", "NURSE" },
+                    { "3c74fa1d-602d-442c-a8b4-7cf7997c173e", "2140f3be-18e2-4f7f-89e6-075133fb0881", "Patient", "PATIENT" },
+                    { "6e2c220d-9539-4e9a-b076-9823e386b36a", "4fd028a8-754f-459f-af0e-cb28832c4924", "Doctor", "Doctor" },
+                    { "838cfce4-4659-4972-b31f-8451071ed1f2", "c16d8077-0d5c-43bc-ab44-93c10cad1547", "Admin", "ADMIN" }
                 });
 
             migrationBuilder.CreateIndex(
