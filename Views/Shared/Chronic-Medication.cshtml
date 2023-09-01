@@ -8,7 +8,6 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
 	<link rel="stylesheet" href="~/assets/css/ready.css">
 	<link rel="stylesheet" href="~/assets/css/demo.css">
-	
 	<!-- fevicon -->
 	<link rel="icon" href="~/Logo/favicon.ico" type="image/x-icon" />
 </head>
@@ -169,8 +168,6 @@
 						</div>
 					</div>
 				</div>
-				</section>
-				
 				<ul class="nav">
 					<li class="nav-item active">
 						<a href="index.html">
@@ -181,43 +178,43 @@
 					</li>
 					<li class="nav-item">
 						<a asp-controller="ManageFile" asp-action="ManageFile">
-							<i class="fas fa-file-alt" style="font-size:small"></i>
+							<i class="la la-table"></i>
 							<p>Manage File</p>
 							<@*span class="badge badge-count">14</span>*@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a asp-controller="Chronic" asp-action="Fillmed">
-							<i class="fas fa-file-alt" style="font-size:small" ></i>
-							<p>Filling Prescription</p>
+						<a href="forms.html">
+							<i class="la la-keyboard-o"></i>
+							<p></p>
 							@*<span class="badge badge-count">50</span>*@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a asp-controller="Chronic" asp-action="MedRecords">
-							<i class="fa fa-book" style="font-size:small"></i>
-							<p>Medcine Records</p>
+						<a href="tables.html">
+							<i class="la la-th"></i>
+							<p></p>
 							@*<span class="badge badge-count">6</span>*@
 						</a>
 					</li>
-					@*<li class="nav-item">
-						<a asp-controller="Chronic" asp-action="UpdateFilling">
+					<li class="nav-item">
+						<a href="notifications.html">
 							<i class="la la-bell"></i>
-							<p>Update Filling</p>*@
+							<p></p>
 							@*<span class="badge badge-success">3</span>*@
 						</a>
 					</li>
-					@*<li class="nav-item">
-						<a asp-controller="Chronic" asp-action="UpdateMed">
-							<i class="fas fa-file" style="font-size:small"></i>
-							<p>Update Medicine Records</p>*@
+					<li class="nav-item">
+						<a href="typography.html">
+							<i class="la la-font"></i>
+							<p></p>
 							@*<span class="badge badge-danger">25</span>*@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a asp-controller="Chronic" asp-action="CollectMed">
+						<a href="icons.html">
 							<i class="la la-fonticons"></i>
-							<p>Collect Medication</p>
+							<p>Vaccination</p>
 						</a>
 					</li>
 					@*<li class="nav-item update-pro">
@@ -229,20 +226,18 @@
 				</ul>
 			</div>
 		</div>
-		
-	</div>
-	</div>
+		<div class="main-panel">
+			<div class="content">
 
-	<div class="main-panel">
-		<div class="content">
+				@RenderBody()
+			</div>
 
-			@RenderBody()
 		</div>
 	</div>
+	</div>
+
 
 </body>
-
-
 <script src="~/assets/js/core/jquery.3.2.1.min.js"></script>
 <script src="~/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 <script src="~/assets/js/core/popper.min.js"></script>

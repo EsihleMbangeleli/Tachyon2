@@ -7,100 +7,149 @@
 }
 
 
-<form method="post" asp-action="CreateFilling" class=" form-horizontal bg-blue-200 p-2 text-dark bg-opacity-80" max-width:800px; margin:50px auto;>
-    <div class=" border border-dark p-3">
-        <div asp-validation-summary="ModelOnly" class=" text-danger"></div>
-        <div class="col-lg-4 right mt-lg-0 mt-4">
-            <img src="/css/_filling_pill.jpg" alt="" width="560" />
-        </div>
-        <div class="mt-2 p-2 bg-primary text-center text-white rounded">
-            <h6>Please Fill in Prescription</h6>
-
-        </div>
-        <div class=" form-group">
-            <label asp-for="PatientName"></label>
-            <div col-sm-5>
-                <input asp-for="PatientName" class=" form-control" id="validationName" required />
-            </div>
-            <div class="invalid-feedback">
-            </div>
-            <span asp-validation-for="PatientName" class=" text-danger"></span>
-        </div>
-        <div class=" form-group">
-            <label asp-for="DateOfBirth"></label>
-            <div col-sm-10>
-                <input asp-for="DateOfBirth" class=" form-control" id="validationRace" required />
-            </div>
-            <div class="invalid-feedback">
-            </div>
-            <span asp-validation-for="DateOfBirth" class=" text-danger"></span>
-
-        </div>
-        <div class=" form-group">
-            <label asp-for="Allergies"></label>
-            <div col-sm-10>
-                <input asp-for="Allergies" class=" form-control" id="validationRace" required />
-            </div>
-            <div class="invalid-feedback">
-            </div>
-            <span asp-validation-for="Allergies" class=" text-danger"></span>
-
-        </div>
-        <div class=" form-group">
-            <label asp-for="Weight"></label>
-            <div col-sm-10>
-                <input asp-for="Weight" class=" form-control" id="validationAbility" required />
-            </div>
-            <div class="invalid-feedback">
-            </div>
-            <span asp-validation-for="Weight" class=" text-danger"></span>
-            </div>
-
-            <div class=" form-group">
-            <label asp-for="DrugsName"></label>
-                <div col-sm-10>
-                <input asp-for="DrugsName" class=" form-control" id="validationAbility" required />
-                </div>
-                <div class="invalid-feedback">
-                </div>
-            <span asp-validation-for="DrugsName" class=" text-danger"></span>
-            </div>
-        <div class=" form-group">
-            <label asp-for="Unit"></label>
-            <div col-sm-10>
-                <input asp-for="Unit" class=" form-control" id="validationAbility" required />
-            </div>
-            <div class="invalid-feedback">
-            </div>
-            <span asp-validation-for="Unit" class=" text-danger"></span>
-        </div>
-        <div class=" form-group">
-            <label asp-for="Dosage"></label>
-            <div col-sm-10>
-                <input asp-for="Dosage" class=" form-control" id="validationAbility" required />
-            </div>
-            <div class="invalid-feedback">
-            </div>
-            <span asp-validation-for="Dosage" class=" text-danger"></span>
-        </div>
-        <div class=" form-group">
-            <label asp-for="DietToFollow"></label>
-            <div col-sm-10>
-                <input asp-for="DietToFollow" class=" form-control" id="validationAbility" required />
-            </div>
-            <div class="invalid-feedback">
-            </div>
-            <span asp-validation-for="DietToFollow" class=" text-danger"></span>
+@*<form method="post" asp-action="CreateFilling" class="bg-info  row gy-2 gx-3 align-items-center">
+    <div class="border p-6">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>@*this line is for validations *@
+        @*<div class="form-group row text-center">
+            <h2 class="text-black-50 p-lg-3">Please Fill in Prescription </h2>
         </div>
 
-                <div class=" form-group row">
-                    <div class=" col-8 offset-2 row">
-                        <div class=" col">
-                            <input type="submit" class="btn-blue-300 btn-lg  " value="create" />
-                        </div>
-                        <div class=" col-1">
-                    <a asp-action="FillingIndex" class="btn btn-danger">MedicationList</a>
+        <div class="Container">
+            <div class="col-12">
+                <div class="collapse-horizontal">
+                    <div class="col-6">
+                        <label asp-for="Date"></label>
+                        <input asp-for="Date" class="form-control" />
+
+                        <span asp-validation-for="Date" class="text-danger"></span>
+
+                    </div>
+                    <div class="col-6">
+                        <label asp-for="PatientName"></label>
+                        <input asp-for="PatientName" class="form-control" />
+                        <span asp-validation-for="PatientName" class="text-danger"></span>
+                    </div>
+                    <div class="col-6">
+                        <label asp-for="DateOfBirth"></label>
+                        <input asp-for="DateOfBirth" class="form-control" />
+                        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                    </div>
+                    <div class="col-6">
+                        <label asp-for="Allergies"></label>
+                        <input asp-for="Allergies" class="form-control" />
+                        <span asp-validation-for="Allergies" class="text-danger"></span>
+                    </div>
+                    <div class="col-6">
+                        <label asp-for="Weight"></label>
+                        <input asp-for="Weight" class="form-control" />
+                        <span asp-validation-for="Weight" class="text-danger"></span>
+
+                    </div>
+                    <div class="col-6">
+                        <label asp-for="DrugsName"></label>
+                        <input asp-for="DrugsName" class="form-control" />
+                        <span asp-validation-for="DrugsName" class="text-danger"></span>
+                    </div>
+                    <div class="col-6">
+                        <label asp-for="Unit"></label>
+                        <input asp-for="Unit" class="form-control" />
+                        <span asp-validation-for="Unit" class="text-danger"></span>
+                    </div>
+                    <div class="col-6">
+                        <label asp-for="Dosage"></label>
+                        <input asp-for="Dosage" class="form-control" />
+                        <span asp-validation-for="Dosage" class="text-danger"></span>
+                    </div>
+                    <div class="col-6">
+                        <label asp-for="DietToFollow"></label>
+                        <input asp-for="DietToFollow" class="form-control" />
+                        @* <span asp-validation-for="DietToFollow" class="text-danger"></span>*@
+                 @*   </div>
+
+                     <div class="form-group row">
+                <div class="col-8 offset-2 row">
+                    <div class="col">
+                        <input type="submit" class="btn btn-success" value="create" />
+                    </div>
+                    <div class="col">
+                        <a asp-action="FillingIndex" class="btn btn-danger"> filled </a>
                     </div>
                 </div>
+            </div>
+        </div>
 
-</form>
+
+
+
+
+
+                </div>
+            </div>
+
+           
+       
+    </div>
+</form>*@
+<div class="CollectMed">
+
+    <div class="container">
+        <!-- main content -->
+        <div class="agile_info">
+            <div class="w3l_form">
+                <div class="col-lg-4 w3l-features-photo-7_top-right mt-lg-0 mt-4">
+                    <img src="/css/poisoning-pill-bottle.jpg" alt="" width="560" />
+                </div>
+            </div>
+            <div class="w3_info">
+                <h2>Please Fill in Prescription</h2>
+
+                <form asp action="CreateFilling" method="post">
+                    <div class="input-group">
+                        <label asp-for="PatientName"></label>
+                        <input asp-for="PatientName" class="form-control" />
+                    </div>
+
+                    <div class="input-group">
+                        <label asp-for="DateOfBirth"></label>
+                        <input asp-for="DateOfBirth" class="form-control" />
+                    </div>
+                    <div class="input-group">
+                        <label asp-for="DateOfBirth"></label>
+                        <input asp-for="DateOfBirth" class="form-control" />
+                    </div>
+                    <div class="input-group">
+                        <label asp-for="Allergies"></label>
+                        <input asp-for="Allergies" class="form-control" />
+                    </div>
+                    <div class="input-group">
+                        <label asp-for="Weight"></label>
+                        <input asp-for="Weight" class="form-control" />
+                    </div>
+                    <div class="input-group">
+                        <label asp-for="DrugsName"></label>
+                        <input asp-for="DrugsName" class="form-control" />
+                    </div>
+                    <div class="input-group">
+                        <label asp-for="Unit"></label>
+                        <input asp-for="Unit" class="form-control" />
+                    </div>
+                    <div class="input-group">
+                        <label asp-for="Dosage"></label>
+                        <input asp-for="Dosage" class="form-control" />
+                    </div>
+                    <div class="input-group">
+                        <label asp-for="DietToFollow"></label>
+                        <input asp-for="DietToFollow" class="form-control" />
+                    </div>
+                    
+
+                    <input type="submit" class="btn btn-success" value="create" />
+                </form>
+                <a asp-action="FillingIndex" class="btn btn-danger">MedicationList</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
