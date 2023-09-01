@@ -10,9 +10,5 @@ namespace Tachyon.Controllers
         {
             return View();
         }
-		public IActionResult Index3()
-		{
-			return View();
-		}
-	}
+    }
 }
