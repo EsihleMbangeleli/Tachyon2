@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Tachyon.Areas.Identity.Data;
 
@@ -11,9 +12,10 @@ using Tachyon.Areas.Identity.Data;
 namespace Tachyon.Migrations
 {
     [DbContext(typeof(TachyonDbContext))]
-    partial class TachyonDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230901093138_tt")]
+    partial class tt
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,29 +53,29 @@ namespace Tachyon.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "1797f5f8-d71d-4d63-831f-8972e3560ce8",
-                            ConcurrencyStamp = "e8f4b30e-dd71-4338-9024-506be74d4aba",
+                            Id = "ddb7b53b-d582-4d5c-bb5f-dddebcc9da9b",
+                            ConcurrencyStamp = "ca3a1f2a-aef0-4eb5-99f9-d46d8c968e3f",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "25707936-10e9-4b9a-9b97-5d5e169cf3c4",
-                            ConcurrencyStamp = "9b271534-90fb-4106-8e7d-aab54efa4ec7",
+                            Id = "401c2466-1b3b-4f5e-b643-815602c4e58c",
+                            ConcurrencyStamp = "619e314f-f2f2-4e00-97ba-7225aea56be7",
                             Name = "Doctor",
                             NormalizedName = "Doctor"
                         },
                         new
                         {
-                            Id = "67e2f6c2-6ce1-4350-b65b-942043834cca",
-                            ConcurrencyStamp = "a11b5c4e-b0f3-45ba-be11-8e784a5411e4",
+                            Id = "f79887ca-2762-45c3-85e5-85a0442a8a21",
+                            ConcurrencyStamp = "0c7cefcd-904b-40cc-965d-ce8756c910dd",
                             Name = "Patient",
                             NormalizedName = "PATIENT"
                         },
                         new
                         {
-                            Id = "3aa64057-8478-4a8e-9a58-d1fffd764d88",
-                            ConcurrencyStamp = "bdcfa22a-2ea3-4130-b0d1-4832fc5924be",
+                            Id = "a51f8f49-cd6b-48b5-be41-d0b7bc102603",
+                            ConcurrencyStamp = "9f79d09c-9a3b-4e99-978b-0d5c903c0848",
                             Name = "Nurse",
                             NormalizedName = "NURSE"
                         });
@@ -270,23 +272,19 @@ namespace Tachyon.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
-                    b.Property<string>("Department")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("datetimevalue")
+                    b.Property<DateTime?>("datetimevalue")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("lastname")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("name")
-                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("subsystem")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");
