@@ -1,0 +1,177 @@
+﻿@model IEnumerable<Tachyon.Models.Procedure>
+
+@{
+    ViewData["Title"] = "ProcedureIndex";
+    Layout = "~/Views/Shared/_MainLayout-Special.cshtml";
+}
+
+
+<div class="table-wrapper">
+    <h1>Procedure Report</h1>
+
+    <p>
+		<div>
+			<button class="btn btn-primary" type="button" aria-expanded="false">
+				<a asp-action="ProcedureCreate">Create New</a>
+			</button>
+		</div>
+        
+    </p>
+    <table class="fl-table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.dob)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Age)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Gender)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.phone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+                @* <th>
+                @Html.DisplayNameFor(model => model.StartTime)
+                </th>
+                <th>
+                @Html.DisplayNameFor(model => model.EndTime)
+                </th>
+                <th>
+                @Html.DisplayNameFor(model => model.Room)
+                </th>
+                <th>
+                @Html.DisplayNameFor(model => model.Anesthesia)
+                </th>
+                <th>
+                @Html.DisplayNameFor(model => model.anesthesiaType)
+                </th>
+                <th>
+                @Html.DisplayNameFor(model => model.physician)
+                </th>
+                <th>
+                @Html.DisplayNameFor(model => model.Anesthesiologist)
+                </th>
+                <th>
+                @Html.DisplayNameFor(model => model.Assistant)
+                </th>
+                <th>
+                @Html.DisplayNameFor(model => model.InstrumentOperator)
+                </th>
+                <th>
+                @Html.DisplayNameFor(model => model.description)
+                </th>
+                <th>
+                @Html.DisplayNameFor(model => model.complications)
+                </th>
+                <th>
+                @Html.DisplayNameFor(model => model.postProcedure)
+                </th>
+                <th>
+                @Html.DisplayNameFor(model => model.instructions)
+                </th>
+                <th>
+                @Html.DisplayNameFor(model => model.disposition)
+                </th>
+                <th>
+                @Html.DisplayNameFor(model => model.notes)
+                </th> *@
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.dob)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Age)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Gender)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    @* <td>
+                @Html.DisplayFor(modelItem => item.StartTime)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.EndTime)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.Room)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.Anesthesia)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.anesthesiaType)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.physician)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.Anesthesiologist)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.Assistant)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.InstrumentOperator)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.description)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.complications)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.postProcedure)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.instructions)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.disposition)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.notes)
+                </td> *@
+                    <td class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Action
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            @* <a type="button" class="dropdown-item" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> *@
+
+                            <a type="button" class="dropdown-item" asp-action="Details" asp-route-id="@item.id">Details</a>
+                            <a type="button" class="dropdown-item" asp-action="Edit" asp-route-id="@item.id">Edit</a>
+                            <a type="button" class="dropdown-item" asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<link href="~/css/style - copy.css" rel="stylesheet" />
+<link href="~/css/style.css" rel="stylesheet" />
+<link href="~/css/table.css" rel="stylesheet" />
