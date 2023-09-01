@@ -96,7 +96,7 @@
 							</ul>
 						</li>
 						<li class="nav-item dropdown">
-							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="~/css/person-svgrepo-com.svg" alt="user-img" width="36" class="img-circle"><span>Khumo</span></span> </a>
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="assets/img/profile.jpg" alt="user-img" width="36" class="img-circle"><span>@UserManager.GetUserAsync(User).Result.FirstName</span> </a>
 							<ul class="dropdown-menu dropdown-user">
 								<li>
 									<div class="user-box">
@@ -126,13 +126,13 @@
 			<div class="scrollbar-inner sidebar-wrapper">
 				<div class="user">
 					<div class="photo">
-						<img src="~/css/person-svgrepo-com.svg" alt="user">
+						<img src="assets/img/profile.jpg">
 					</div>
 					<div class="info">
 						<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 							<span>
-								Khumo Mohlabane
-								<span class="user-level">Administrator</span>
+
+								<span class="user-level">@UserManager.GetUserAsync(User).Result.FirstName</span>
 								<span class="caret"></span>
 							</span>
 						</a>
@@ -146,14 +146,9 @@
 									</a>
 								</li>
 								<li>
-									<a href="#edit">
-										<span class="link-collapse">Edit Profile</span>
-									</a>
-								</li>
-								<li>
-									<a href="#settings">
-										<span class="link-collapse">Settings</span>
-									</a>
+									<form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+										<button id="logout" type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+									</form>
 								</li>
 							</ul>
 						</div>
