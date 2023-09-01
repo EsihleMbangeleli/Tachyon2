@@ -1364,6 +1364,14 @@
     <None Include="Views\Chronic\MedicationIndex.cshtml" />
     <None Include="Views\Chronic\MediUpdate.cshtml" />
     <None Include="Views\Chronic\MedRecords.cshtml" />
+    <None Include="Views\Vaccine\Appointment.cshtml" />
+    <None Include="Views\Vaccine\AppointmentHistory.cshtml" />
+    <None Include="Views\Vaccine\Feedback.cshtml" />
+    <None Include="Views\Vaccine\Index.cshtml" />
+    <None Include="Views\Vaccine\Screening.cshtml" />
+    <None Include="Views\Vaccine\Select.cshtml" />
+    <None Include="Views\Vaccine\Success.cshtml" />
+    <None Include="Views\Vaccine\UpdateAppointment.cshtml" />
     <None Include="wwwroot\assets\css\ready.css.map" />
     <None Include="wwwroot\assets\fonts\line-awesome.svg" />
     <None Include="wwwroot\assets\fonts\line-awesome.woff2" />
