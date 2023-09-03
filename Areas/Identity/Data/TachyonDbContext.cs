@@ -67,8 +67,6 @@ public class TachyonDbContext : IdentityDbContext<TachyonUser>
     public DbSet<FillingPrescription> fillingPrescriptions { get; set; }
     public DbSet<MedicationRecords> medicationRecords { get; set; }
     public DbSet<Collection> collection { get; set; }
-<<<<<<< Updated upstream
-=======
     public DbSet<Patient> Patients { get; set; }
 	public DbSet<TreatmentPlan> Treatment { get; set;}
 	public DbSet<Procedure> Procedure { get; set; }
@@ -76,5 +74,4 @@ public class TachyonDbContext : IdentityDbContext<TachyonUser>
 	public DbSet<PatientProgress> Progress { get; set; }
 	public DbSet<LabTest> Lab { get; set; }
 	public DbSet<Tachyon.Models.Sappointments>? Sappointments { get; set; }
->>>>>>> Stashed changes
 }

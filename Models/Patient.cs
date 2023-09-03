@@ -21,10 +21,7 @@ namespace Tachyon.Models
 		public string Gender { get; set; }
 		[DisplayName("Phone")]
 		public string phone { get; set; }
-<<<<<<< Updated upstream
-=======
 		public string email { get; set; }
 		public string address { get; set; }
->>>>>>> Stashed changes
 	}
 }

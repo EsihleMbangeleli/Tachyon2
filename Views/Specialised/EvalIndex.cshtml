@@ -4,21 +4,7 @@
     ViewData["Title"] = "EvalIndex";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
-<<<<<<< Updated upstream
-}
 
-<h1>EvalIndex</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.patientID)
-            </th>
-=======
 
 
 <h1>Patient Evaluation</h1>
@@ -30,8 +16,6 @@
 <table class="fl-table">
     <thead>
         <tr>
-            
->>>>>>> Stashed changes
             <th>
                 @Html.DisplayNameFor(model => model.name)
             </th>
@@ -53,30 +37,10 @@
             <th>
                 @Html.DisplayNameFor(model => model.physician)
             </th>
+            
             <th>
-<<<<<<< Updated upstream
-                @Html.DisplayNameFor(model => model.vitals)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.medHistory)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.physicalTest)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.riskAssessment)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.notes)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.addInfo)
-            </th>
-            <th></th>
-=======
                 Action
             </th>
->>>>>>> Stashed changes
         </tr>
     </thead>
     <tbody>
@@ -106,30 +70,6 @@
             <td>
                 @Html.DisplayFor(modelItem => item.physician)
             </td>
-<<<<<<< Updated upstream
-            <td>
-                @Html.DisplayFor(modelItem => item.vitals)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.medHistory)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.physicalTest)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.riskAssessment)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.notes)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.addInfo)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
-=======
             
             <td class="dropdown">
                 <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -140,18 +80,12 @@
                     <a type="button" class="dropdown-item" asp-action="EvalDetails" asp-route-id="@item.id">Details</a> |
                     <a type="button" class="dropdown-item" asp-action="Delete" asp-route-id="@item.id">Delete</a>
                 </div>
->>>>>>> Stashed changes
             </td>
         </tr>
 }
     </tbody>
 </table>
-<<<<<<< Updated upstream
-<link href="~/css/style - copy.css" rel="stylesheet" />
-<link href="~/css/style.css" rel="stylesheet" />
-<link href="~/css/table.css" rel="stylesheet" />
-=======
+
 <link href="~/specialised/style - copy.css" rel="stylesheet" />
 <link href="~/specialised/style.css" rel="stylesheet" />
 <link href="~/specialised/table.css" rel="stylesheet" />
->>>>>>> Stashed changes

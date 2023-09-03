@@ -10,13 +10,10 @@ namespace Tachyon.Controllers
         {
             return View();
         }
-<<<<<<< Updated upstream
-=======
 		public IActionResult Index2()
 		{
 			return View();
 		}
->>>>>>> Stashed changes
 		public IActionResult Index3()
 		{
 			return View();
