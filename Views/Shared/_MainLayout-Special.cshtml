@@ -1,10 +1,11 @@
-﻿@model IEnumerable<Tachyon.Models.Booking>
+﻿@using Microsoft.AspNetCore.Identity
+@using Tachyon.Models
+@using Tachyon.Areas.Identity.Data
 
-@{
-    ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Index.cshtml";
-}
+@inject SignInManager<TachyonUser> SignInManager
+@inject UserManager<TachyonUser> UserManager
 
+﻿
 <!DOCTYPE html>
 
 <html>
@@ -55,7 +56,8 @@
 								<a class="dropdown-item" href="#">Something else here</a>
 							</div>
 						</li>
-						<li class="nav-item dropdown hidden-caret">
+						<
+							li class="nav-item dropdown hidden-caret">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<i class="la la-bell"></i>
 								<span class="notification">3</span>
@@ -66,24 +68,7 @@
 								</li>
 								<li>
 									<div class="notif-center">
-										<a href="#">
-											<div class="notif-icon notif-primary"> <i class="la la-user-plus"></i> </div>
-											<div class="notif-content">
-												<span class="block">
-													New user registered
-												</span>
-												<span class="time">5 minutes ago</span>
-											</div>
-										</a>
-										<a href="#">
-											<div class="notif-icon notif-success"> <i class="la la-comment"></i> </div>
-											<div class="notif-content">
-												<span class="block">
-													Rahmad commented on Admin
-												</span>
-												<span class="time">12 minutes ago</span>
-											</div>
-										</a>
+										
 										<a href="#">
 											<div class="notif-img">
 												<img src="assets/img/profile2.jpg" alt="Img Profile">
@@ -112,13 +97,13 @@
 							</ul>
 						</li>
 						<li class="nav-item dropdown">
-							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="assets/img/profile.jpg" alt="user-img" width="36" class="img-circle"><span>Hizrian</span></span> </a>
+                            <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"><img src="~/specialised/person.svg" alt="user-img" width="36" class="img-circle" > <span>@UserManager.GetUserAsync(User).Result.FirstName</span> </a>
 							<ul class="dropdown-menu dropdown-user">
 								<li>
 									<div class="user-box">
-										<div class="u-img"><img src="assets/img/profile.jpg" alt="user"></div>
+										<div class="u-img"><img src="~/specialised/person.svg" alt="user-img" width="36" class="img-circle"></div>
 										<div class="u-text">
-											<h4>Hizrian</h4>
+											<h4>@UserManager.GetUserAsync(User).Result.FirstName</h4>
 											<p class="text-muted">hello@themekita.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
 										</div>
 									</div>
@@ -142,13 +127,13 @@
 			<div class="scrollbar-inner sidebar-wrapper">
 				<div class="user">
 					<div class="photo">
-						<img src="assets/img/profile.jpg">
+						<img src="~/specialised/person.svg" alt="user-img" width="36" class="img-circle">
 					</div>
 					<div class="info">
 						<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 							<span>
-								Hizrian
-								<span class="user-level">Administrator</span>
+
+								<span class="user-level">@UserManager.GetUserAsync(User).Result.FirstName</span>
 								<span class="caret"></span>
 							</span>
 						</a>
@@ -162,14 +147,9 @@
 									</a>
 								</li>
 								<li>
-									<a href="#edit">
-										<span class="link-collapse">Edit Profile</span>
-									</a>
-								</li>
-								<li>
-									<a href="#settings">
-										<span class="link-collapse">Settings</span>
-									</a>
+									<form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+										<button id="logout" type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+									</form>
 								</li>
 							</ul>
 						</div>
@@ -177,59 +157,61 @@
 				</div>
 				<ul class="nav">
 					<li class="nav-item active">
-						<a href="index.html">
+						<a asp-controller="Dashboard" asp-action="Index3">
 							<i class="la la-dashboard"></i>
 							<p>Dashboard</p>
 							<span class="badge badge-count">5</span>
+						</a>
+					</li>
+					<li class="nav-item active">
+						<a asp-controller="Home" asp-action="Index">
+							<i class="la la-table"></i>
+							<p>HOME</p>
+							@*span class="badge badge-count">14</span>*@
 						</a>
 					</li>
 					<li class="nav-item">
 						<a asp-controller="ManageFile" asp-action="ManageFile">
 							<i class="la la-table"></i>
 							<p>Manage File</p>
-							<@*span class="badge badge-count">14</span>*@
+							@*span class="badge badge-count">14</span>*@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a asp-controller="Bookings" asp-action="Bookings">
+						<a asp-controller="Specialised" asp-action="EvalIndex">
 							<i class="la la-table"></i>
-							<p>Walk-in</p>
+							<p>Patient Evaluation</p>
 							@*<span class="badge badge-count">50</span>*@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a href="tables.html">
+						<a asp-controller="Specialised" asp-action="ProgressIndex">
 							<i class="la la-th"></i>
-							<p>Booking</p>
+							<p>Patient Progress</p>
 							@*<span class="badge badge-count">6</span>*@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a href="notifications.html">
+						<a asp-controller="Specialised" asp-action="TreatmentIndex">
 							<i class="la la-bell"></i>
-							<p>Departments</p>
+							<p>Treatment Plan</p>
 							@*<span class="badge badge-success">3</span>*@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a href="typography.html">
+						<a asp-controller="Specialised" asp-action="LabIndex">
 							<i class="la la-font"></i>
-							<p>Manage Appointments</p>
+							<p>Lab Tests</p>
 							@*<span class="badge badge-danger">25</span>*@
 						</a>
 					</li>
-					<li class="nav-item">
-						<a href="icons.html">
-							<i class="la la-fonticons"></i>
-							<p>Vaccination</p>
-						</a>
+					
+					<li class="nav-item update-pro">
+						<button  data-toggle="modal" data-target="#modalUpdate">
+							<i class="la la-hand-pointer-o"></i>
+							<p>Update To Pro</p>
+						</button>
 					</li>
-					@*<li class="nav-item update-pro">
-					<button  data-toggle="modal" data-target="#modalUpdate">
-					<i class="la la-hand-pointer-o"></i>
-					<p>Update To Pro</p>
-					</button>
-					</li>*@
 				</ul>
 			</div>
 		</div>
@@ -241,7 +223,7 @@
 
 		</div>
 	</div>
-	</div>
+
 
 
 </body>
@@ -259,4 +241,3 @@
 <script src="~/assets/js/ready.min.js"></script>
 <script src="~/assets/js/demo.js"></script>
 </html>
-

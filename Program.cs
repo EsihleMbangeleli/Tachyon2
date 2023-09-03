@@ -34,7 +34,11 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
+<<<<<<< Updated upstream
     pattern: "{controller=Dashboard}/{action=Index}/{id?}");
+=======
+    pattern: "{controller=Dashboard}/{action=Index2}/{id?}");
+>>>>>>> Stashed changes
 
 
 app.MapRazorPages();
