@@ -5,8 +5,7 @@
     Layout = "~/Views/Shared/_MainLayout-Special.cshtml";
 }
 
-
-<h1>LabDetails</h1>
+<div>
 
 <div>
     <h4>LabTest</h4>
@@ -87,8 +86,9 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="LabEdit" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="LabIndex">Back to List</a>
+</div>
 </div>
 <link href="~/specialised/style - copy.css" rel="stylesheet" />
 <link href="~/specialised/style.css" rel="stylesheet" />
