@@ -71,11 +71,5 @@ public class TachyonDbContext : IdentityDbContext<TachyonUser>
 	public DbSet<PatientEvaluation> Evaluation { get; set; }
 	public DbSet<PatientProgress> Progress { get; set; }
 	public DbSet<LabTest> Lab { get; set; }
-    public DbSet<Patient> Patients { get; set; }
-	public DbSet<TreatmentPlan> Treatment { get; set;}
-	public DbSet<Procedure> Procedure { get; set; }
-	public DbSet<PatientEvaluation> Evaluation { get; set; }
-	public DbSet<PatientProgress> Progress { get; set; }
-	public DbSet<LabTest> Lab { get; set; }
 	public DbSet<Tachyon.Models.Sappointments>? Sappointments { get; set; }
 }
