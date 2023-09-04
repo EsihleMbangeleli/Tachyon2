@@ -2,21 +2,18 @@
 
 @{
     ViewData["Title"] = "LabIndex";
-    Layout = "~/Views/Shared/_MainLayout.cshtml";
-}
+    Layout = "~/Views/Shared/_MainLayout-Special.cshtml";
 }
 
-<h1>LabIndex</h1>
+<div>
+<h1>Lab Tests</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a type ="button" class="btn btn-primary" asp-action="LabCreate">Create New</a>
 </p>
-<table class="table">
+    <table class="fl-table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.patientID)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.name)
             </th>
@@ -40,7 +37,7 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.testName)
-            </th>
+            </th>@* 
             <th>
                 @Html.DisplayNameFor(model => model.results)
             </th>
@@ -49,16 +46,13 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.recommendations)
-            </th>
+            </th> *@
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.patientID)
-            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.name)
             </td>
@@ -82,7 +76,7 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.testName)
-            </td>
+            </td>@* 
             <td>
                 @Html.DisplayFor(modelItem => item.results)
             </td>
@@ -91,16 +85,22 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.recommendations)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+            </td> *@
+            <td class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Action
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a type="button" class="dropdown-item" asp-action="LabEdit" asp-route-id="@item.id">Edit</a> |
+                    <a type="button" class="dropdown-item" asp-action="LabDetails" asp-route-id="@item.id">Details</a> |
+                    <a type="button" class="dropdown-item" asp-action="LabDelete" asp-route-id="@item.id">Delete</a>
+                </div>
             </td>
         </tr>
 }
     </tbody>
 </table>
-<link href="~/css/style - copy.css" rel="stylesheet" />
-<link href="~/css/style.css" rel="stylesheet" />
-<link href="~/css/table.css" rel="stylesheet" />
+</div>
+<link href="~/specialised/style - copy.css" rel="stylesheet" />
+<link href="~/specialised/style.css" rel="stylesheet" />
+<link href="~/specialised/table.css" rel="stylesheet" />

@@ -2,12 +2,10 @@
 
 @{
     ViewData["Title"] = "ProceduresDetails";
-    Layout = "~/Views/Shared/_MainLayout.cshtml";
-}
+    Layout = "~/Views/Shared/_MainLayout-Special.cshtml";
 }
 
-<h1>ProceduresDetails</h1>
-
+<div>
 <div>
     <h4>Procedure</h4>
     <hr />
@@ -156,6 +154,8 @@
     <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
-<link href="~/css/style - copy.css" rel="stylesheet" />
-<link href="~/css/style.css" rel="stylesheet" />
-<link href="~/css/table.css" rel="stylesheet" />
+</div>
+
+<link href="~/specialised/style - copy.css" rel="stylesheet" />
+<link href="~/specialised/style.css" rel="stylesheet" />
+<link href="~/specialised/table.css" rel="stylesheet" />
