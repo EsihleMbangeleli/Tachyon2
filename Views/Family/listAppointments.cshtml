@@ -30,7 +30,7 @@
 
                     <th>AppointmentDate</th>
 
-                    
+                    <th>Time</th>
                     <th>Edit</th>
 
                 </tr>
@@ -45,7 +45,7 @@
                         <td >@familyAppointment.NurseName</td>
                         <td >@familyAppointment.CurrentDate</td>
                         <td >@familyAppointment.AppointmentDate</td>
-                       
+                        <td >@familyAppointment.Time</td>
                         <td>
                             <div class=" w-100 btn-group" role="group">
                                 <a asp-controller="Family" asp-action="updateAppointment" asp-route-ID="@familyAppointment.AppointmentID" class=" btn btn-blue-300 mx-1">Update</a>
