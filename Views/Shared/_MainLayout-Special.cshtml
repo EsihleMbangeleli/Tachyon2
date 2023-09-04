@@ -56,7 +56,8 @@
 								<a class="dropdown-item" href="#">Something else here</a>
 							</div>
 						</li>
-						<li class="nav-item dropdown hidden-caret">
+						<
+							li class="nav-item dropdown hidden-caret">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<i class="la la-bell"></i>
 								<span class="notification">3</span>
@@ -96,13 +97,13 @@
 							</ul>
 						</li>
 						<li class="nav-item dropdown">
-							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="assets/img/profile.jpg" alt="user-img" width="36" class="img-circle"><span>@UserManager.GetUserAsync(User).Result.FirstName</span> </a>
+                            <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"><img src="~/specialised/person.svg" alt="user-img" width="36" class="img-circle" > <span>@UserManager.GetUserAsync(User).Result.FirstName</span> </a>
 							<ul class="dropdown-menu dropdown-user">
 								<li>
 									<div class="user-box">
-										<div class="u-img"><img src="~/css/person-svgrepo-com.svg" alt="user"></div>
+										<div class="u-img"><img src="~/specialised/person.svg" alt="user-img" width="36" class="img-circle"></div>
 										<div class="u-text">
-											<h4>Hizrian</h4>
+											<h4>@UserManager.GetUserAsync(User).Result.FirstName</h4>
 											<p class="text-muted">hello@themekita.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
 										</div>
 									</div>
@@ -126,7 +127,7 @@
 			<div class="scrollbar-inner sidebar-wrapper">
 				<div class="user">
 					<div class="photo">
-						<img src="assets/img/profile.jpg">
+						<img src="~/specialised/person.svg" alt="user-img" width="36" class="img-circle">
 					</div>
 					<div class="info">
 						<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
@@ -203,15 +204,7 @@
 							<p>Lab Tests</p>
 							@*<span class="badge badge-danger">25</span>*@
 						</a>
-						
 					</li>
-					
-					@*<li class="nav-item update-pro">
-					<button  data-toggle="modal" data-target="#modalUpdate">
-					<i class="la la-hand-pointer-o"></i>
-					<p>Update To Pro</p>
-					</button>
-					</li>*@
 				</ul>
 			</div>
 		</div>

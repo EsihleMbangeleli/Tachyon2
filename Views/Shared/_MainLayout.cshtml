@@ -112,11 +112,12 @@
 							</ul>
 						</li>
 						<li class="nav-item dropdown">
-							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="assets/img/profile.jpg" alt="user-img" width="36" class="img-circle"><span>@UserManager.GetUserAsync(User).Result.FirstName</span> </a>
-							<ul class="dropdown-menu dropdown-user">
+                            <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"><img src="~/specialised/person.svg" alt="user-img" width="36" class="img-circle" > <span>@UserManager.GetUserAsync(User).Result.FirstName</span> </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                
 								<li>
 									<div class="user-box">
-										<div class="u-img"><img src="assets/img/profile.jpg" alt="user"></div>
+										<div class="u-img"><img src="~/specialised/person.svg" alt="user-img" width="36" class="img-circle"></div>
 										<div class="u-text">
 											<h4></h4>
 											<p class="text-muted">@UserManager.GetUserAsync(User).Result.FirstName @UserManager.GetUserAsync(User).Result.LastName</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
@@ -135,7 +136,7 @@
 				<div class="scrollbar-inner sidebar-wrapper">
 					<div class="user">
 						<div class="photo">
-							<img src="assets/img/profile.jpg">
+						<img src="~/specialised/person.svg" alt="user-img" width="36" class="img-circle">
 						</div>
 						<div class="info">
 							<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
@@ -175,7 +176,6 @@
 							<a asp-controller="ManageFile" asp-action="ManageFile">
 								<i class="la la-table"></i>
 								<p>Manage File</p>
-								<@*span class="badge badge-count">14</span>*@
 							</a>
 						</li>
 						<li class="nav-item">
