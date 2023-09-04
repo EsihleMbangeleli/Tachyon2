@@ -5,12 +5,14 @@
     Layout = "~/Views/Shared/_MainLayout-Special.cshtml";
 }
 
-<h1>ProgressIndex</h1>
+<div>
+<h1>Patient Progress</h1>
 
-<p>
-    <a asp-action="ProgressCreate">Create New</a>
-</p>
-<table class="table">
+    <p>
+        <a type="button" class="btn btn-primary" asp-action="ProgressCreate">Create New</a>
+    </p>
+
+    <table class="fl-table">
     <thead>
         <tr>
             <th>
@@ -157,15 +159,21 @@
             <td>
                 @Html.DisplayFor(modelItem => item.AntibioticTreatment)
             </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
-            </td>
+                    <td class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Action
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a type="button" class="dropdown-item" asp-action=="ProgressEdit" asp-route-id="@item.id">Edit</a> |
+                            <a type="button" class="dropdown-item" asp-action="ProgressDetails" asp-route-id="@item.id">Details</a> |
+                            <a type="button" class="dropdown-item" asp-action="ProgressDelete" asp-route-id="@item.id">Delete</a>
+                        </div>
+                    </td>
         </tr>
 }
     </tbody>
 </table>
-<link href="~/css/style - copy.css" rel="stylesheet" />
-<link href="~/css/style.css" rel="stylesheet" />
-<link href="~/css/table.css" rel="stylesheet" />
+</div>
+<link href="~/specialised/style - copy.css" rel="stylesheet" />
+<link href="~/specialised/style.css" rel="stylesheet" />
+<link href="~/specialised/table.css" rel="stylesheet" />
