@@ -61,7 +61,8 @@ public class TachyonDbContext : IdentityDbContext<TachyonUser>
             builder.Property(u => u.LastName).HasMaxLength(225);
         }
     }
-    
+
+    public DbSet<Tachyon.Models.Booking>? Booking { get; set; }
     public DbSet<FillingPrescription> fillingPrescriptions { get; set; }
     public DbSet<MedicationRecords> medicationRecords { get; set; }
     public DbSet<Collection> collection { get; set; }
