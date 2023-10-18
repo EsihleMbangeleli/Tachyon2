@@ -73,4 +73,5 @@ public class TachyonDbContext : IdentityDbContext<TachyonUser>
 	public DbSet<PatientProgress> Progress { get; set; }
 	public DbSet<LabTest> Lab { get; set; }
 	public DbSet<Tachyon.Models.Sappointments>? Sappointments { get; set; }
+    public DbSet<NewProcedure> NewPro { get; set; }
 }
